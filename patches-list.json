@@ -1,0 +1,5 @@
+{
+  "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs.",
+  "version": "0.0.0",
+  "patches": []
+}
