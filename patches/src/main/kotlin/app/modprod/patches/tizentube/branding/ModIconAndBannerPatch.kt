@@ -22,7 +22,7 @@ private const val BRANDING_ROOT = "/tizentube/branding"
 private val DENSITIES = listOf("mdpi", "hdpi", "xhdpi", "xxhdpi", "xxxhdpi")
 
 /** Anchor class so bundled resources are loaded through the patch bundle's own classloader. */
-private object BrandingResources
+private object ModIconResources
 
 private val logger = Logger.getLogger("ModIconAndBannerPatch")
 
@@ -128,7 +128,7 @@ val modIconAndBannerPatch = resourcePatch(
                     }
 
                     val density = densityOf(directory) ?: continue
-                    val source = BrandingResources::class.java.getResourceAsStream("$BRANDING_ROOT/$kind/$density.png")
+                    val source = ModIconResources::class.java.getResourceAsStream("$BRANDING_ROOT/$kind/$density.png")
                         ?: throw PatchException("Missing bundled artwork: $BRANDING_ROOT/$kind/$density.png")
 
                     // PNG bytes are written even if the target is .webp or has no extension:
